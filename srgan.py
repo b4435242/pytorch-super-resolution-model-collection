@@ -316,8 +316,8 @@ class SRGAN(object):
                       % ((epoch + 1), (iter + 1), len(train_data_loader), G_loss.item(), D_loss.item()))
 
                 # tensorboard logging
-                G_logger.scalar_summary('losses', G_loss.data[0], step + 1)
-                D_logger.scalar_summary('losses', D_loss.data[0], step + 1)
+                G_logger.scalar_summary('losses', G_loss.item(), step + 1)
+                D_logger.scalar_summary('losses', D_loss.item(), step + 1)
                 step += 1
 
             # avg. loss per epoch
