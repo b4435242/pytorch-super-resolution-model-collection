@@ -93,7 +93,7 @@ def main():
         raise Exception("[!] There is no option for " + args.model_name)
 
     # train
-    #net.train()
+    net.train()
 
     # test
     #net.test()
