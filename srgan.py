@@ -294,7 +294,7 @@ class SRGAN(object):
                 D_fake_decision = self.D(recon_image)
 
                 # Adversarial loss
-                GAN_loss = self.BCE_loss(D_fake_decision, real_label)
+                GAN_loss = self.BCE_loss(D_fake_decision[:,0], real_label)
 
                 # Content losses
                 mse_loss = self.MSE_loss(recon_image, x_)
