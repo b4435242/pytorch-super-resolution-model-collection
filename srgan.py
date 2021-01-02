@@ -273,12 +273,12 @@ class SRGAN(object):
 
                 # Train discriminator with real data
                 D_real_decision = self.D(x_)
-                D_real_loss = self.BCE_loss(D_real_decision, real_label)
+                D_real_loss = self.BCE_loss(D_real_decision[:,0], real_label)
 
                 # Train discriminator with fake data
                 recon_image = self.G(y_)
                 D_fake_decision = self.D(recon_image)
-                D_fake_loss = self.BCE_loss(D_fake_decision, fake_label)
+                D_fake_loss = self.BCE_loss(D_fake_decision[:,0], fake_label)
 
                 D_loss = D_real_loss + D_fake_loss
 
