@@ -152,7 +152,7 @@ class VDSR(object):
                 print("Epoch: [%2d] [%4d/%4d] loss: %.8f" % ((epoch + 1), (iter + 1), len(train_data_loader), loss.item()))
 
                 # tensorboard logging
-                logger.scalar_summary('loss', loss.item(), step + 1)
+                #logger.scalar_summary('loss', loss.item(), step + 1)
                 step += 1
 
             # avg. loss per epoch
