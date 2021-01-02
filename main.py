@@ -17,7 +17,7 @@ def parse_args():
                         choices=['SRCNN', 'VDSR', 'DRCN', 'ESPCN', 'FastNeuralStyle', 'FSRCNN', 'SRGAN', 'LapSRN',
                                  'EnhanceNet', 'EDSR', 'EnhanceGAN'], help='The type of model')
     parser.add_argument('--data_dir', type=str, default='../Data')
-    parser.add_argument('--train_dataset', type=list, default=['DIV2K'], choices=['bsds300', 'General100', 'T91'],
+    parser.add_argument('--train_dataset', type=list, default=[], choices=['DIV2K','bsds300', 'General100', 'T91'],
                         help='The name of training dataset')
     parser.add_argument('--test_dataset', type=list, default=['Set5', 'Set14', 'Urban100'], choices=['Set5', 'Set14', 'Urban100'],
                         help='The name of test dataset')
