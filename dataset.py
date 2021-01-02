@@ -88,15 +88,15 @@ class TrainDatasetFromFolder(data.Dataset):
             # img, _, _ = img.split()
 
         # hr_img HR image
-        hr_transform = Compose([Scale((hr_img_w, hr_img_h), interpolation=Image.BICUBIC), ToTensor()])
+        hr_transform = Compose([Resize((hr_img_w, hr_img_h), interpolation=Image.BICUBIC), ToTensor()])
         hr_img = hr_transform(img)
 
         # lr_img LR image
-        lr_transform = Compose([Scale((lr_img_w, lr_img_h), interpolation=Image.BICUBIC), ToTensor()])
+        lr_transform = Compose([Resize((lr_img_w, lr_img_h), interpolation=Image.BICUBIC), ToTensor()])
         lr_img = lr_transform(img)
 
         # Bicubic interpolated image
-        bc_transform = Compose([ToPILImage(), Scale((hr_img_w, hr_img_h), interpolation=Image.BICUBIC), ToTensor()])
+        bc_transform = Compose([ToPILImage(), Resize((hr_img_w, hr_img_h), interpolation=Image.BICUBIC), ToTensor()])
         bc_img = bc_transform(lr_img)
 
         return lr_img, hr_img, bc_img
