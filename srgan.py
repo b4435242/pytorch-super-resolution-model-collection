@@ -66,7 +66,7 @@ class Discriminator(torch.nn.Module):
         )
 
         self.dense_layers = nn.Sequential(
-            DenseBlock(base_filter * 8, base_filter * 9, activation='lrelu',
+            DenseBlock((base_filter * 8 )**2, base_filter * 9, activation='lrelu',
                        norm=None),
             DenseBlock(base_filter * 9, 1, activation='sigmoid', norm=None)
         )
