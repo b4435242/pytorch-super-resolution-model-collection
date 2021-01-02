@@ -37,7 +37,7 @@ class TrainDatasetFromFolder(data.Dataset):
 
     def __getitem__(self, index):
         # load image
-        img = load_img(self.image_filenames[index])
+        img = load_img(self.image_filenames[index]).convert('RGB')
 
         # determine valid HR image size with scale factor
         self.crop_size = calculate_valid_crop_size(self.crop_size, self.scale_factor)

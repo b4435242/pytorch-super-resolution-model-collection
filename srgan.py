@@ -24,9 +24,9 @@ class Generator(torch.nn.Module):
 
         self.mid_conv = ConvBlock(base_filter, base_filter, 3, 1, 1, activation=None)
 
-        self.upscale4x = nn.Sequential(
-            Upsample2xBlock(base_filter, base_filter, upsample='ps', activation='prelu', norm=None),
-            Upsample2xBlock(base_filter, base_filter, upsample='ps', activation='prelu', norm=None)
+        self.upscale3x = nn.Sequential(
+            Upsample3xBlock(base_filter, base_filter, upsample='ps', activation='prelu', norm=None),
+            #Upsample2xBlock(base_filter, base_filter, upsample='ps', activation='prelu', norm=None)
         )
 
         self.output_conv = ConvBlock(base_filter, num_channels, 9, 1, 4, activation=None, norm=None)
@@ -37,7 +37,7 @@ class Generator(torch.nn.Module):
         out = self.residual_layers(out)
         out = self.mid_conv(out)
         out = torch.add(out, residual)
-        out = self.upscale4x(out)
+        out = self.upscale3x(out)
         out = self.output_conv(out)
         return out
 

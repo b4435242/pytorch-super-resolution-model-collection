@@ -41,7 +41,6 @@ def get_training_set(data_dir, datasets, crop_size, scale_factor, is_gray=False)
         else:
             train_dir.append(join(data_dir, dataset))
 
-    print(data_dir, train_dir)
     return TrainDatasetFromFolder(data_dir,
                                   is_gray=is_gray,
                                   random_scale=True,    # random scaling
