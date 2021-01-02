@@ -145,7 +145,7 @@ def plot_test_result(imgs, psnrs, img_num, save_dir='', is_training=False, show_
     # axes.axis('off')
     for i, (ax, img, psnr) in enumerate(zip(axes.flatten(), imgs, psnrs)):
         ax.axis('off')
-        ax.set_adjustable('box-forced')
+        ax.set_adjustable('box')
         if list(img.shape)[0] == 3:
             # Scale to 0-255
             # img = (((img - img.min()) * 255) / (img.max() - img.min())).numpy().transpose(1, 2, 0).astype(np.uint8)

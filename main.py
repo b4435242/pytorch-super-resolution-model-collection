@@ -97,7 +97,14 @@ def main():
 
     # test
     net.test()
-    # net.test_single('getchu_full.jpg')
+
+    lr_dir = 'testing_lr_images'
+    lr_images = os.listdir(lr_dir)
+    for i, image_name in enumerate(lr_images):
+        full_name = os.path.join(lr_dir, image_name)
+        recon_img = net.test_single(full_name)
+        recon_img.save('/content/drive/MyDrive/Colab Notebooks/HW4/srgan_results/'+image_name)
+
 
 if __name__ == '__main__':
     main()

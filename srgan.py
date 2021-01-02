@@ -478,7 +478,10 @@ class SRGAN(object):
         save_fn = result_dir + '/SR_result.png'
         recon_img.save(save_fn)
 
+
         print('Single test result image is saved.')
+        return recon_img
+
 
     def save_model(self, epoch=None, is_pretrain=False):
         model_dir = os.path.join(self.save_dir, 'model')
