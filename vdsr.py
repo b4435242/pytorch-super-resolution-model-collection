@@ -68,8 +68,7 @@ class VDSR(object):
                               shuffle=True)
         elif dataset == 'test':
             print('Loading test datasets...')
-            test_set = get_test_set(self.data_dir, self.test_dataset, self.scale_factor, is_gray=is_gray,
-                                    normalize=False)
+            test_set = get_test_set(self.data_dir, self.test_dataset, self.scale_factor, is_gray=is_gray)
             return DataLoader(dataset=test_set, num_workers=self.num_threads,
                               batch_size=self.test_batch_size,
                               shuffle=False)
