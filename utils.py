@@ -256,7 +256,7 @@ def img_interp(imgs, scale_factor, interpolation='bicubic'):
         interp_imgs = torch.FloatTensor(size[0], size[1], target_width, target_height)
         for i, img in enumerate(imgs):
             transform = transforms.Compose([transforms.ToPILImage(),
-                                            transforms.Resize((target_height, target_width), interpolation=interpolation),
+                                            transforms.Resize((target_width, target_height), interpolation=interpolation),
                                             transforms.ToTensor()])
 
             interp_imgs[i, :, :, :] = transform(img)
@@ -265,6 +265,6 @@ def img_interp(imgs, scale_factor, interpolation='bicubic'):
         target_height = int(size[2] * scale_factor)
         target_width = int(size[1] * scale_factor)
         transform = transforms.Compose([transforms.ToPILImage(),
-                                        transforms.Resize((target_height, target_width), interpolation=interpolation),
+                                        transforms.Resize((target_width, target_height), interpolation=interpolation),
                                         transforms.ToTensor()])
         return transform(imgs)
