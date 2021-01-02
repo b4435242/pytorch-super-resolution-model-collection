@@ -313,7 +313,7 @@ class SRGAN(object):
                 G_epoch_loss += G_loss.item()
                 D_epoch_loss += D_loss.item()
                 print("Epoch: [%2d] [%4d/%4d] G_loss: %.8f, D_loss: %.8f"
-                      % ((epoch + 1), (iter + 1), len(train_data_loader), G_loss.data[0], D_loss.data[0]))
+                      % ((epoch + 1), (iter + 1), len(train_data_loader), G_loss.item(), D_loss.item()))
 
                 # tensorboard logging
                 G_logger.scalar_summary('losses', G_loss.data[0], step + 1)
