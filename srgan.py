@@ -9,6 +9,8 @@ from data import get_training_set, get_test_set
 import utils
 from logger import Logger
 from torchvision.transforms import *
+from PIL import Image
+
 
 
 class Generator(torch.nn.Module):

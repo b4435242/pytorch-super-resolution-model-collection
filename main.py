@@ -93,10 +93,10 @@ def main():
         raise Exception("[!] There is no option for " + args.model_name)
 
     # train
-    net.train()
+    #net.train()
 
     # test
-    net.test()
+    #net.test()
 
     lr_dir = 'testing_lr_images'
     lr_images = os.listdir(lr_dir)
