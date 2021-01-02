@@ -61,6 +61,6 @@ def get_test_set(data_dir, dataset, scale_factor, is_gray=False):
     else:
         test_dir = join(data_dir, dataset)
 
-    return TestDatasetFromFolder(test_dir,
+    return TestDatasetFromFolder(data_dir,
                                  is_gray=is_gray,
                                  scale_factor=scale_factor)
