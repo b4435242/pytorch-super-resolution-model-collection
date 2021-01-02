@@ -75,7 +75,6 @@ class Discriminator(torch.nn.Module):
         out = self.input_conv(x)
         out = self.conv_blocks(out)
         out = out.view(out.size()[0], -1)
-        print(out.shape)
         out = self.dense_layers(out)
         return out
 
