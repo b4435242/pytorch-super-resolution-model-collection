@@ -213,6 +213,7 @@ def PSNR(pred, gt):
     mse = np.mean(diff.numpy() ** 2)
     if mse == 0:
         return 100
+    print(mse, 1.0/mse, log10(1.0 / mse))
     return 10 * log10(1.0 / mse)
 
 
