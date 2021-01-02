@@ -187,7 +187,7 @@ class PSBlock(torch.nn.Module):
 
 class Upsample3xBlock(torch.nn.Module):
     def __init__(self, input_size, output_size, bias=True, upsample='deconv', activation='relu', norm='batch'):
-        super(Upsample2xBlock, self).__init__()
+        super(Upsample3xBlock, self).__init__()
         scale_factor = 3
         # 1. Deconvolution (Transposed convolution)
         if upsample == 'deconv':
