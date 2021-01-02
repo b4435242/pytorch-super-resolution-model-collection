@@ -211,7 +211,7 @@ class SRGAN(object):
 
                     # log
                     print("Epoch: [%2d] [%4d/%4d] G_loss_pretrain: %.8f"
-                          % ((epoch + 1), (iter + 1), len(train_data_loader), G_loss_pretrain.item[0]))
+                          % ((epoch + 1), (iter + 1), len(train_data_loader), G_loss_pretrain.item()[0]))
 
             print('Pre-training is finished.')
 
