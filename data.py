@@ -52,13 +52,13 @@ def get_training_set(data_dir, datasets, crop_size, scale_factor, is_gray=False)
 
 
 def get_test_set(data_dir, dataset, scale_factor, is_gray=False):
-    if dataset == 'bsds300':
+    '''if dataset == 'bsds300':
         root_dir = download_bsds300(data_dir)
         test_dir = join(root_dir, "test")
     elif dataset == 'DIV2K':
         test_dir = join(data_dir, dataset, 'DIV2K_test_LR_bicubic/X4')
     else:
-        test_dir = join(data_dir, dataset)
+        test_dir = join(data_dir, dataset)'''
 
     return TestDatasetFromFolder(data_dir,
                                  is_gray=is_gray,
