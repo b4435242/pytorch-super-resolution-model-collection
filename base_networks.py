@@ -4,7 +4,7 @@ import torch
 class DenseBlock(torch.nn.Module):
     def __init__(self, input_size, output_size, bias=True, activation='relu', norm='batch'):
         super(DenseBlock, self).__init__()
-        self.fc = torch.nn.Linear(input_size, output_size, bias=bias)
+        self.fc = torch.nn.Linear(input_size, output_size, bias=bias, padding=1)
 
         self.norm = norm
         if self.norm =='batch':
