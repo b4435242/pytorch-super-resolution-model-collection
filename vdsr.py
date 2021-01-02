@@ -150,11 +150,11 @@ class VDSR(object):
                 self.optimizer.step()
 
                 # log
-                epoch_loss += loss.data[0]
-                print("Epoch: [%2d] [%4d/%4d] loss: %.8f" % ((epoch + 1), (iter + 1), len(train_data_loader), loss.data[0]))
+                epoch_loss += loss.item()
+                print("Epoch: [%2d] [%4d/%4d] loss: %.8f" % ((epoch + 1), (iter + 1), len(train_data_loader), loss.item()))
 
                 # tensorboard logging
-                logger.scalar_summary('loss', loss.data[0], step + 1)
+                logger.scalar_summary('loss', loss.item(), step + 1)
                 step += 1
 
             # avg. loss per epoch
@@ -260,7 +260,7 @@ class VDSR(object):
         utils.save_img(recon_img.cpu().data, 1, save_dir=self.save_dir)
 
         out = recon_img.cpu()
-        out_img_y = out.data[0]
+        out_img_y = out.item()
         out_img_y = (((out_img_y - out_img_y.min()) * 255) / (out_img_y.max() - out_img_y.min())).numpy()
         # out_img_y *= 255.0
         # out_img_y = out_img_y.clip(0, 255)
