@@ -63,8 +63,7 @@ class VDSR(object):
 
         if dataset == 'train':
             print('Loading train datasets...')
-            train_set = get_training_set(self.data_dir, self.train_dataset, self.crop_size, self.scale_factor, is_gray=is_gray,
-                                         normalize=False)
+            train_set = get_training_set(self.data_dir, self.train_dataset, self.crop_size, self.scale_factor, is_gray=is_gray)
             return DataLoader(dataset=train_set, num_workers=self.num_threads, batch_size=self.batch_size,
                               shuffle=True)
         elif dataset == 'test':
