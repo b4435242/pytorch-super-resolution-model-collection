@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import imageio
-from scipy.misc import imsave
+#from scipy.misc import imsave
 # from edge_detector import edge_detect
 
 
@@ -129,7 +129,7 @@ def save_img(img, img_num, save_dir='', is_training=False):
         save_fn = save_dir + '/SR_result_epoch_{:d}'.format(img_num) + '.png'
     else:
         save_fn = save_dir + '/SR_result_{:d}'.format(img_num) + '.png'
-    imsave(save_fn, save_img)
+    imageio.mimsave(save_fn, save_img)
 
 
 def plot_test_result(imgs, psnrs, img_num, save_dir='', is_training=False, show_label=True, show=False):
