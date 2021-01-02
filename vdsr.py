@@ -128,7 +128,7 @@ class VDSR(object):
                 print("Learning rate decay: lr={}".format(self.optimizer.param_groups[0]["lr"]))
 
             epoch_loss = 0
-            for iter, (input, target) in enumerate(train_data_loader):
+            for iter, (input, target, bi) in enumerate(train_data_loader):
                 # input data (bicubic interpolated image)
                 if self.gpu_mode:
                     x_ = Variable(target.cuda())
