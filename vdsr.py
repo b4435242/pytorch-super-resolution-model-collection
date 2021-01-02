@@ -114,7 +114,7 @@ class VDSR(object):
         step = 0
 
         # test image
-        test_input, test_target = test_data_loader.dataset.__getitem__(2)
+        test_input, test_target, test_bicubic = test_data_loader.dataset.__getitem__(2)
         test_input = test_input.unsqueeze(0)
         test_target = test_target.unsqueeze(0)
 
