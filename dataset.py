@@ -20,13 +20,13 @@ def calculate_valid_crop_size(crop_size, scale_factor):
 
 
 class TrainDatasetFromFolder(data.Dataset):
-    def __init__(self, image_dirs, is_gray=False, random_scale=True, crop_size=128, rotate=True, fliplr=True,
+    def __init__(self, image_dir, is_gray=False, random_scale=True, crop_size=128, rotate=True, fliplr=True,
                  fliptb=True, scale_factor=4):
         super(TrainDatasetFromFolder, self).__init__()
 
         self.image_filenames = []
-        for image_dir in image_dirs:
-            self.image_filenames.extend(join(image_dir, x) for x in sorted(listdir(image_dir)) if is_image_file(x))
+        #for image_dir in image_dirs:
+        self.image_filenames.extend(join(image_dir, x) for x in sorted(listdir(image_dir)) if is_image_file(x))
         self.is_gray = is_gray
         self.random_scale = random_scale
         self.crop_size = crop_size
